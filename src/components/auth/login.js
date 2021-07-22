@@ -35,7 +35,7 @@ export default class Login extends Component {
         )
         .then(response => {
             if (response.data.status === 'created') {
-                console.log("you can come in...")
+                console.log("you can come in...", response)
                 this.props.handleSuccessfulAuth();
             } else {
                 this.setState({
@@ -45,6 +45,7 @@ export default class Login extends Component {
             }
         })
         .catch(error => {
+            console.log(error)
             this.setState({
                 errorText: "An error occurred"
             });
